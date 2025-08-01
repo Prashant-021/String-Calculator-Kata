@@ -1,7 +1,6 @@
-
 # 📟 String Calculator Kata
 
-This project is a test-driven development (TDD) implementation of the **String Calculator Kata**. The goal of this kata is to incrementally build a string-based calculator by writing tests first, then implementing features to make those tests pass.
+This project is a test-driven development (TDD) implementation of the **String Calculator Kata**. The goal of this kata is to incrementally build a string-based calculator by writing tests first, then implementing the functionality.
 
 ---
 
@@ -84,9 +83,7 @@ add("//***\n1***2")   // ➞ 3
 
 ## 📸 Screenshots
 
-```markdown
 ![Test Screenshot](./Screenshot/Testing.png)
-```
 
 ---
 
