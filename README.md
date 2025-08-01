@@ -96,12 +96,6 @@ add("//***\n1***2")   // ➞ 3
 
 ---
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
 ## 🙌 Acknowledgments
 
 Based on the original kata by [Roy Osherove](https://osherove.com/tdd-kata-1).
