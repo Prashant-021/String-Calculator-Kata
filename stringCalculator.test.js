@@ -43,8 +43,18 @@ describe('string with negative numbers', () => {
     const testCases = [['1,-2,3', "negative numbers not allowed: -2"], ['1,-2,-53', "negative numbers not allowed: -2, -53"]]
 
     testCases.forEach(([input, expected]) => {
-        test(generateTestCaseTitle(input, expected),() => {
+        test(generateTestCaseTitle(input, expected), () => {
             expect(() => stringCalculator(input)).toThrow(expected)
+        })
+    })
+})
+
+describe('string with custom delimiter', () => {
+    const testCases = [['//;\n1;2', 3], ['//#\n1#2#4', 7]]
+
+    testCases.forEach(([input, expected]) => {
+        test(generateTestCaseTitle(input, expected), () => {
+            expect(stringCalculator(input)).toBe(expected)
         })
     })
 })
