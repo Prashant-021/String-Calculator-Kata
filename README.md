@@ -84,8 +84,6 @@ add("//***\n1***2")   // ➞ 3
 
 ## 📸 Screenshots
 
-> You can add screenshots by uploading them to the repo and referencing them like this:
-
 ```markdown
 ![Test Screenshot](./Screenshot/Testing.png)
 ```
