@@ -2,7 +2,7 @@ const stringCalculator = require('./stringCalculator');
 
 // Function to generate a test case Title
 const generateTestCaseTitle = (input, expected) => {
-    return `string "${input}" should return ${expected}`;
+    return `string "${input.replace(/\n/g, '\\n')}" should return ${expected}`;
 }
 
 test('empty string returns 0', () => {
@@ -20,7 +20,7 @@ describe('string with one number', () => {
 })
 
 describe('string with two or more numbers', () => {
-    const testCases = [['1,2', 3], ['1,4',5], ['1,3,4', 8]]
+    const testCases = [['1,2', 3], ['1,4', 5], ['1,3,4', 8]]
 
     testCases.forEach(([input, expected]) => {
         test(generateTestCaseTitle(input, expected), () => {
@@ -29,3 +29,12 @@ describe('string with two or more numbers', () => {
     })
 })
 
+describe('string with new lines between numbers', () => {
+    const testCases = [['1\n2,3', 6], ['1,2\n3,4\n5', 15]]
+
+    testCases.forEach(([input, expected]) => {
+        test(generateTestCaseTitle(input, expected), () => {
+            expect(stringCalculator(input)).toBe(expected)
+        })
+    })
+})
