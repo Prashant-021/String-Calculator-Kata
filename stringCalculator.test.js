@@ -10,12 +10,22 @@ test('empty string returns 0', () => {
 })
 
 describe('string with one number', () => {
-    test(generateTestCaseTitle('5', 5), () => {
-        expect(stringCalculator('5')).toBe(5);
-    })
+    const testCases = [['3', 3], ['5', 5]]
 
-    test(generateTestCaseTitle('10', 10), () => {
-        expect(stringCalculator('10')).toBe(10);
+    testCases.forEach(([input, expected]) => {
+        test(generateTestCaseTitle(input, expected), () => {
+            expect(stringCalculator(input)).toBe(expected);
+        })
+    })
+})
+
+describe('string with two or more numbers', () => {
+    const testCases = [['1,2', 3], ['1,4',5], ['1,3,4', 8]]
+
+    testCases.forEach(([input, expected]) => {
+        test(generateTestCaseTitle(input, expected), () => {
+            expect(stringCalculator(input)).toBe(expected);
+        })
     })
 })
 
