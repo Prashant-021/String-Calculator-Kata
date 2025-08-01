@@ -1,4 +1,4 @@
 function stringCalculator(str) {
-    return 0
+    return +str || 0
 }
 module.exports = stringCalculator
