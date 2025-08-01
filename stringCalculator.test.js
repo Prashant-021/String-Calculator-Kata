@@ -60,7 +60,7 @@ describe('string with custom delimiter', () => {
 })
 
 describe('string with both custom and default delimiters', () => {
-    const testCases = [['//#\n1#2,4', 7], ['//#\n1#2,3\n4', 10]]
+    const testCases = [['//#\n1#2,4', 7], ['//#\n1#2,3\n4', 10],['//*\n1*2,3\n4', 10] ]
 
     testCases.forEach(([input, expected]) => {
         test(generateTestCaseTitle(input, expected), () => {
@@ -68,3 +68,4 @@ describe('string with both custom and default delimiters', () => {
         })
     })
 })
+

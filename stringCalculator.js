@@ -1,3 +1,7 @@
+function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 function stringCalculator(str) {
     if (str === '') return 0;
 
@@ -7,7 +11,7 @@ function stringCalculator(str) {
 
     if (str.startsWith('//')) {
         const delimiterLineEnd = str.indexOf('\n');
-        customDelimiter = str.slice(2, delimiterLineEnd)
+        customDelimiter = escapeRegExp(str.slice(2, delimiterLineEnd))
         numbers = str.slice(delimiterLineEnd + 1)
     }
     const nums = numbers.split(new RegExp(customDelimiter ? delimiter + '|' + customDelimiter : delimiter));
