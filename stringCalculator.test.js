@@ -38,3 +38,13 @@ describe('string with new lines between numbers', () => {
         })
     })
 })
+
+describe('string with negative numbers', () => {
+    const testCases = [['1,-2,3', "negative numbers not allowed: -2"], ['1,-2,-53', "negative numbers not allowed: -2, -53"]]
+
+    testCases.forEach(([input, expected]) => {
+        test(generateTestCaseTitle(input, expected),() => {
+            expect(() => stringCalculator(input)).toThrow(expected)
+        })
+    })
+})
