@@ -1,16 +1,16 @@
 function stringCalculator(str) {
     if (str === '') return 0;
 
-    let delimiter = /,|\n/;
+    let delimiter = ',|\n';
+    let customDelimiter = null;
     let numbers = str;
 
     if (str.startsWith('//')) {
         const delimiterLineEnd = str.indexOf('\n');
-        const customDelimiter = str.slice(2, delimiterLineEnd);
-        delimiter = customDelimiter
+        customDelimiter = str.slice(2, delimiterLineEnd)
         numbers = str.slice(delimiterLineEnd + 1)
     }
-    const nums = numbers.split(delimiter);
+    const nums = numbers.split(new RegExp(customDelimiter ? delimiter + '|' + customDelimiter : delimiter));
 
     let sum = 0;
     let negative = [];
